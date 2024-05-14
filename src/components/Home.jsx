@@ -1,0 +1,115 @@
+import React, { useMemo } from "react";
+import Wallppr from "./Wallppr";
+import Grid from "@mui/material/Grid";
+import Gif from "../images/GIF.gif";
+import Title from "../containers/Title";
+import data from "../mocks/data.json";
+import Heading from "../containers/Heading";
+import Image from "../containers/Image";
+import Button from "../containers/Button";
+import Marquee from "react-fast-marquee";
+import amazon from "../images/amazon.png";
+import hcl from "../images/hcl.png";
+import dell from "../images/dell.png";
+import mic from "../images/mic.png";
+import linkedin from "../images/linkin.png";
+import infosys from "../images/infosys.png";
+import globe from "../images/globe.jpg";
+import img_exprience from "../images/wall-dark.jpg";
+import { useNavigate } from "react-router-dom";
+
+const Home = () => {
+  const navigate = useNavigate();
+  
+  const getImageArr = useMemo(() => {
+    return [amazon, hcl, dell, infosys, linkedin, mic];
+  }, []);
+
+  const getImageAlts = useMemo(() => {
+    return ["amazon", "hcl", "dell", "infosys", "linkedin", "mic"];
+  }, []);
+
+  return (
+    <>
+      <Wallppr />
+
+      {/* Driving inno section */}
+      <div className="driving-sec">
+        <Grid container>
+          <Grid item xs={12} lg={6} spacing={1} className="drive-txt">
+            <Heading component="h1" content={data.driving.heading1} />
+            <Heading component="h3" content={data.driving.heading3} />
+            <Title title={data.driving.title1} />
+            <Title title={data.driving.title2} />
+            <Title title={data.driving.title3} />
+          </Grid>
+          <Grid lg={6}>
+            <Image src={Gif} alt="gif-annimation" classNames="gif-img" />
+          </Grid>
+        </Grid>
+      </div>
+
+      {/* request btn */}
+      <div className="divBtn">
+        <Button
+          text={data.button.request}
+          onclick={() => navigate("/contact")}
+        />
+      </div>
+
+      <hr width="50%" color="green" />
+
+      {/* globe-wallpaper section */}
+      <div
+        className="globe-wall"
+        style={{
+          backgroundImage: `url(${globe})`,
+        }}
+      >
+        <Title title={data.globe.title} />
+        <Marquee direction="left" width="20%">
+          {getImageArr.map((imgs, idx) => (
+            <Image src={imgs} alt={getImageAlts[idx]} />
+          ))}
+        </Marquee>
+      </div>
+
+      {/* redifining para */}
+      <div className="Redefining_sec">
+        <Heading
+          component="h3"
+          content={data.redifiniing.heading3}
+          className="headRefi-1"
+        />
+        <Heading
+          component="h2"
+          content={data.redifiniing.heading2}
+          className="headRefi-2"
+        />
+        <div className="Redi-para">
+          <Title title={data.redifiniing.title} className="Redefi" />
+        </div>
+      </div>
+
+      {/* experience it yoursefl */}
+      <div
+        className="ex-demo"
+        style={{ backgroundImage: `url(${img_exprience})` }}
+      >
+        <Heading
+          component="h1"
+          content={data.experience.heading}
+          className="demo-txt"
+        />
+        <Title title={data.experience.title} className="demo-txt" />
+        <Button
+          text={data.button.request}
+          className="ex-demo-btn"
+          onclick={() => navigate("/contact")}
+        />
+      </div>
+    </>
+  );
+};
+
+export default Home;
