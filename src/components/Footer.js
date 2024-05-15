@@ -1,7 +1,5 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import gPlay from "../images/gPlay.png";
-import store from "../images/store.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
