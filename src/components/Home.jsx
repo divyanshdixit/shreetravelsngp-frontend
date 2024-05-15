@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
-  
+
   const getImageArr = useMemo(() => {
     return [amazon, hcl, dell, infosys, linkedin, mic];
   }, []);
@@ -32,7 +32,6 @@ const Home = () => {
   return (
     <>
       <Wallppr />
-
       {/* Driving inno section */}
       <div className="driving-sec">
         <Grid container>
@@ -49,16 +48,7 @@ const Home = () => {
         </Grid>
       </div>
 
-      {/* request btn */}
-      <div className="divBtn">
-        <Button
-          text={data.button.request}
-          onclick={() => navigate("/contact")}
-        />
-      </div>
-
       <hr width="50%" color="green" />
-
       {/* globe-wallpaper section */}
       <div
         className="globe-wall"
@@ -67,13 +57,35 @@ const Home = () => {
         }}
       >
         <Title title={data.globe.title} />
-        <Marquee direction="left" width="20%">
-          {getImageArr.map((imgs, idx) => (
-            <Image src={imgs} alt={getImageAlts[idx]} />
-          ))}
-        </Marquee>
-      </div>
+        {/* request btn */}
+        <div className="divBtn-grps">
+          <Button
+            text={data.button.transportation}
+            onclick={() => navigate("/contact")}
+            className="ex-demo-btn"
+          />
 
+          <Button
+            text={data.button.payments}
+            onclick={() => navigate("/")}
+            className="ex-demo-btn"
+          />
+        </div>
+
+        {/* <Marquee direction="right" width="10%" loop="25">
+          <div>
+            {" "}
+            <p>B.H.E.L </p>{" "}
+          </div>
+          <div>
+            <p>BPCL </p>
+          </div>{" "}
+          <br />
+          <p>HPCL </p> <br />
+          <p>Blue Star </p> <br />
+          <p>Bosch Ltd </p> <br />
+        </Marquee> */}
+      </div>
       {/* redifining para */}
       <div className="Redefining_sec">
         <Heading
@@ -90,7 +102,6 @@ const Home = () => {
           <Title title={data.redifiniing.title} className="Redefi" />
         </div>
       </div>
-
       {/* experience it yoursefl */}
       <div
         className="ex-demo"

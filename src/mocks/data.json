@@ -1,28 +1,30 @@
 {
-    "driving": {
-        "title1": "At MoveInSync, we understand the unique difficulties faced by each company in managing employee commutes. This motivates us to offer customized solutions tailored to your specific needs.",
-        "title2": "At MoveInSync, we understand the unique difficulties faced by each company in managing employee commutes. This motivates us to offer customized solutions tailored to your specific needs.",
-        "title3": "At MoveInSync, we understand the unique difficulties faced by each company in managing employee commutes. This motivates us to offer customized solutions tailored to your specific needs.",
-        "heading1": "Driving innovation.",
-        "heading3": "Revolutionizing office commute."
-    },
+  "driving": {
+    "title1": "At Shree travels, we understand the unique difficulties faced by each company in managing employee commutes. This motivates us to offer customized solutions tailored to your specific needs.",
+    "title2": "Whether you have a small team or a large workforce, we have the expertise to upgrade your employee transportation. Take a demo now to find out what helps us provide safe commuting options that effortlessly balance comfort and affordability.",
+    "title3": "Our offering allows enterprises to outsource their transportation operations. By combining technology, fleet management, and people, Shree travels is a one-stop shop for all your employee commute needs.",
+    "heading1": "Efficiency. Reliability. Excellence",
+    "heading3": "Your trusted ride partner"
+  },
 
-    "button": {
-        "request": "Request A Demo"
-    },
+  "button": {
+    "request": "Request A Ride",
+    "payments": "Quick Payments",
+    "transportation": "Employee Transportation"
+  },
 
-    "globe": {
-        "title": "Our innovative solutions drive success for top companies around the globe"
-    },
+  "globe": {
+    "title": "Our innovative solutions drive success for top companies around the city"
+  },
 
-    "redifiniing": {
-        "heading3": "Redefining",
-        "heading2": "office commute",
-        "title": "With years of experience, we have redefined employee transportation in multiple major cities across the world. Our end-to-end outsourcing service as well as our technology solutions are built to support organizations as they enhance their employee commute processes."
-    },
+  "redifiniing": {
+    "heading3": "Redefining",
+    "heading2": "office commute",
+    "title": "With 30 years of experience, we have redefined employee transportation in our city. Our end-to-end outsourcing service as well as our technology solutions are built to support organizations as they enhance their employee commute processes."
+  },
 
-    "experience": {
-        "title": "Schedule a customized demo to understand how we can help you optimize your office transportation.",
-        "heading": "Experience it yourself"
-    }
+  "experience": {
+    "title": "Schedule a customized demo to understand how we can help you optimize your office transportation.",
+    "heading": "Experience it yourself"
+  }
 }

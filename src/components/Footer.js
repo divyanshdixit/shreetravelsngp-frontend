@@ -1,14 +1,14 @@
-import React from 'react' ;
-import Grid from '@mui/material/Grid';
-import gPlay from '../images/gPlay.png';
-import store from '../images/store.png'
+import React from "react";
+import Grid from "@mui/material/Grid";
+import gPlay from "../images/gPlay.png";
+import store from "../images/store.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className='footer'>
-     
+    <div className="footer">
       <Grid container>
-      <Grid item xs={3}>
+        {/* <Grid item xs={3}>
       <div class="flexBasis company">
           <h3>Company</h3>
           <div className="footer-list company-list">
@@ -19,8 +19,8 @@ const Footer = () => {
             <p>Contact Us</p>
           </div>
         </div>
-      </Grid>
-      <Grid item xs={3}>
+      </Grid> */}
+        {/* <Grid item xs={3}>
       <div class="flexBasis company">
           <h3>SOLUTIONS</h3>
           <div className="footer-list SOLUTIONS-list">
@@ -31,8 +31,8 @@ const Footer = () => {
             <p>Work place</p>
           </div>
         </div>
-      </Grid>
-      <Grid item xs={3}>
+      </Grid> */}
+        {/* <Grid item xs={3}>
       <div className="OFFERINGS-sec">
           <h3>OFFERINGS</h3>
           <div class="footer-list SOLUTIONS-list">
@@ -43,27 +43,26 @@ const Footer = () => {
             <p>Work place</p>
           </div>
         </div>
-      </Grid>
-      <Grid item xs={3}>
+      </Grid> */}
+        {/* <Grid item xs={3}>
       
       <h3>Download</h3>
       <img src={gPlay} alt="gplay" className='g-play' /> 
       <img src={store} alt="store"  className='stor'/>
+      </Grid> */}
       </Grid>
-      </Grid>
-      <hr/>
+      <hr />
       <Grid container>
         <Grid item xs={6}>
-           <h4>@ 2023 Copyright. All rights reserved.</h4>
+          <h4>@ 2024 Copyright. All rights reserved.</h4>
         </Grid>
-        <Grid item xs={6}>
-           <h4>Privacy Policy|Terms of Use|End User Agreement</h4>
+        <Grid item xs={6} className="footer_privacy">
+          <Link to="/privacy"> Privacy Policy </Link>|{" "}
+          <Link to="/terms">Terms of Use </Link>
         </Grid>
-       
-
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

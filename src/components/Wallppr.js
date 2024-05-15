@@ -1,16 +1,20 @@
 import React from 'react' ;
-import car from '../images/car.png' ;
+// import car from '../images/car.png' ;
+import cab from '../images/night.png' ;
 
 const Wallppr = () => {
   return (
      
-    <div className="wallpaper" style={{backgroundImage:`url(${car})`}}>
+    <div className="wallpaper" style={{backgroundImage:`url(${cab})`}}>
       <br/>
       <br/>
       <br/>
-      <h1 className='wall-txt'>Simplifying Office 
+     
+   
+    
+      <h1 className='wall-txt'>Your Comfort
       <br/>
-       Commute</h1>
+      Our Priority</h1>
     </div>
     
   )

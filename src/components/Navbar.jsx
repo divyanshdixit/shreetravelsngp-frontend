@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/header.png";
+import logo from "../images/shree.png";
 import { Link, useNavigate } from "react-router-dom";
 import Button from '../containers/Button';
 import data from '../mocks/data.json';
@@ -9,7 +9,7 @@ const Navbar = () => {
     const navigate = useNavigate();
   return (
     <nav className="navbar">
-        <Image src={logo} alt="logo" className="logo" />
+        <Link to='/'><Image src={logo} alt="logo" className="logo" /> </Link>
 
       <div className="navdiv">
         <ul>
