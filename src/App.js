@@ -1,13 +1,13 @@
-import "./App.css";
-import Footer from "./components/Footer";
+import "./App.min.css";
 // import { useDispatch, useSelector } from "react-redux";
-import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import Home from "./components/Home";
-import Privacy from "./components/Privacy";
-import Terms from "./components/Terms";
 const Contact = lazy(() => import("./components/Contact"));
+const Privacy = lazy(() => import("./components/Privacy"));
+const Terms = lazy(() => import("./components/Terms"));
+const Home = lazy(() => import("./components/Home"));
+const Navbar = lazy(() => import("./components/Navbar"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   // const count = useSelector((state) => state.example.count);
@@ -17,7 +17,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Suspense fallback="Loading...">
+              <Home />
+            </Suspense>} />
         <Route
           path="/privacy"
           element={
