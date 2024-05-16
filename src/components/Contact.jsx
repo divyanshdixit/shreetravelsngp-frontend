@@ -54,9 +54,9 @@ const Contact = () => {
 
   return (
     <>
-    <div className="contact-container">
+    <div className="contact-container body-container">
       <Box component="form" className="contact-form">
-        <h3> Send your queries </h3>
+        <Heading component={'h3'} content={'Send your queries'} />
         <FormControl>
           {/* <InputLabel htmlFor="name">Name</InputLabel> */}
           <TextField
@@ -111,7 +111,7 @@ const Contact = () => {
             onChange={handleChange}
           />
         </FormControl>
-        <Button variant="outlined" type="submit" onClick={handleSubmit}>
+        <Button variant="contained" type="submit" onClick={handleSubmit} className="submit-btn">
           Submit
         </Button>
         {
@@ -125,33 +125,30 @@ const Contact = () => {
 
         <div className="address-container">
           <div className="contact-details">
-            <h3> Contact Details </h3>
+            <Heading component={'h3'} content={'Contact Details'} />
             <div className="contact-address">
             <p>
-                Plot No. 1066, Near Law College Square, Gorepeth
+                <b>Address:</b> Plot No. 1066, Near Law College Square, Gorepeth, Nagpur- 440010
             </p>
             <p>
-                Nagpur- 440010
+                <b>Tele:</b> 2536801 
             </p>
             <p>
-                Tele: 2536801 
+                <b>Mobile:</b> 9822236802 
             </p>
             <p>
-                Mobile: 9822236802 
-            </p>
-            <p>
-                Email: shreetravelsngp@yahoo.com
+                <b>Email:</b> shreetravelsngp@yahoo.com
             </p>
             </div>
           </div>
           <div className="open_hrs">
-            <h3> Opening Hours </h3>
-            <p> Mon to Sat: <span> 10:00 AM to 10:00 PM</span></p>
+            <Heading component={'h3'} content={'Opening Hours'} />
+            <p> <b>Mon to Sat:</b> <span> 10:00 AM to 10:00 PM</span></p>
           </div>
         </div>
 
         <div className="pricing-img">
-          <Heading component="h2" content="Pricing" />
+          <Heading component="h3" content="Pricing" />
           <Image src={pricing} alt="pricing" width="500px" height="500px" classNames="pricing" />
         </div>
       </div>

@@ -33,7 +33,7 @@ const Home = () => {
     <>
       <Wallppr />
       {/* Driving inno section */}
-      <div className="driving-sec">
+      <div className="driving-sec body-container">
         <Grid container>
           <Grid item xs={12} lg={6} spacing={1} className="drive-txt">
             <Heading component="h1" content={data.driving.heading1} />
@@ -51,7 +51,7 @@ const Home = () => {
       <hr width="50%" color="green" />
       {/* globe-wallpaper section */}
       <div
-        className="globe-wall"
+        className="globe-wall body-container"
         style={{
           backgroundImage: `url(${globe})`,
         }}
@@ -86,8 +86,9 @@ const Home = () => {
           <p>Bosch Ltd </p> <br />
         </Marquee> */}
       </div>
+
       {/* redifining para */}
-      <div className="Redefining_sec">
+      <div className="Redefining_sec body-container">
         <Heading
           component="h3"
           content={data.redifiniing.heading3}
@@ -102,9 +103,10 @@ const Home = () => {
           <Title title={data.redifiniing.title} className="Redefi" />
         </div>
       </div>
+
       {/* experience it yoursefl */}
       <div
-        className="ex-demo"
+        className="ex-demo body-container"
         style={{ backgroundImage: `url(${img_exprience})` }}
       >
         <Heading

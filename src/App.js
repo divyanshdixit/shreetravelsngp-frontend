@@ -1,7 +1,8 @@
-import "./App.css";
+import "./App.min.css";
 // import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import { Box } from "@mui/material";
 const Contact = lazy(() => import("./components/Contact"));
 const Privacy = lazy(() => import("./components/Privacy"));
 const Terms = lazy(() => import("./components/Terms"));
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <Box className="main-container">
       <Routes>
         <Route path="/" element={<Suspense fallback="Loading...">
               <Home />
@@ -73,6 +75,7 @@ function App() {
           }
         />
       </Routes>
+      </Box>
       <Footer />
     </div>
   );
