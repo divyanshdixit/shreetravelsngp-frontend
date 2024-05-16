@@ -4,4 +4,4 @@ const Title = ({ title, className }) => {
   return <p className={className}> {title} </p>;
 };
 
-export default Title;
+export default React.memo(Title);

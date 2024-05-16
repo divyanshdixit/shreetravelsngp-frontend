@@ -8,7 +8,7 @@ import {
   Alert,
 } from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
-import pricing from '../images/pricing.jpeg';
+import pricing from '../images/pricing.webp';
 import Image from "../containers/Image";
 import Heading from "../containers/Heading";
 
@@ -23,7 +23,6 @@ const Contact = () => {
   const [show, setShow] = useState(false);
 
   const handleSubmit = (e) => {
-    console.log(e)
     e.preventDefault();
     const {name, email, number, query} = contact;
     setShow(true);

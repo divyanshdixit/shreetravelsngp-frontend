@@ -15,4 +15,4 @@ const Heading = ({ component, content, className }) => {
   }
 };
 
-export default Heading;
+export default React.memo(Heading);

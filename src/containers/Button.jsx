@@ -18,4 +18,4 @@ const CustomButton = ({ text, className, onclick }) => {
   );
 };
 
-export default CustomButton;
+export default React.memo(CustomButton);

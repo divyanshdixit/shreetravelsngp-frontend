@@ -1,6 +1,5 @@
 import React from 'react' ;
-// import car from '../images/car.png' ;
-import cab from '../images/night.png' ;
+import cab from '../images/night.webp' ;
 
 const Wallppr = () => {
   return (

@@ -6,4 +6,4 @@ const Image = ({src, alt, width, height, classNames}) => {
   )
 }
 
-export default Image
+export default React.memo(Image);

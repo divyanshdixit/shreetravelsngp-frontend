@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "../containers/Image";
-import car1 from '../images/car1.jpeg';
-import car2 from '../images/car2.jpeg';
-import car3 from '../images/car3.jpeg';
+import car1 from '../images/car1.webp';
+import car2 from '../images/car2.webp';
+import car3 from '../images/car3.webp';
 import Heading from "../containers/Heading";
 
 const Services = () => {

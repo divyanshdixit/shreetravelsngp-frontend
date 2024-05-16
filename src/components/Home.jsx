@@ -14,8 +14,8 @@ import Button from "../containers/Button";
 // import mic from "../images/mic.png";
 // import linkedin from "../images/linkin.png";
 // import infosys from "../images/infosys.png";
-import globe from "../images/globe.jpg";
-import img_exprience from "../images/wall-dark.jpg";
+import globe from "../images/globe.webp";
+import img_exprience from "../images/wall-dark.webp";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {

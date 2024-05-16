@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/shree.png";
+import logo from "../images/shree.webp";
 import { Link, useNavigate } from "react-router-dom";
 import Button from '../containers/Button';
 import data from '../mocks/data.json';

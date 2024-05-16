@@ -21,60 +21,36 @@ function App() {
     <div className="App">
       <Navbar />
       <Box className="main-container">
-      <Routes>
-        <Route path="/" element={<Suspense fallback="Loading...">
-              <Home />
-            </Suspense>} />
-        <Route
-          path="/privacy"
-          element={
-            <Suspense fallback="Loading...">
-              <Privacy />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/terms"
-          element={
-            <Suspense fallback="Loading...">
-              <Terms />
-            </Suspense>
-          }
-        />
-         <Route
-          path="/cancellation"
-          element={
-            <Suspense fallback="Loading...">
-              <Cancellation />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/payment"
-          element={
-            <Suspense fallback="Loading...">
-              <Payment />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/services"
-          element={
-            <Suspense fallback="Loading...">
-              <Services />
-            </Suspense>
-          }
-        />
-        {/* <Route path="/about" Component={<About/>}/> */}
-        <Route
-          path="/contact"
-          element={
-            <Suspense fallback="Loading...">
-              <Contact />
-            </Suspense>
-          }
-        />
-      </Routes>
+      <Suspense fallback="Loading...">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/privacy"
+            element={<Privacy />}
+          />
+          <Route
+            path="/terms"
+            element={<Terms />}
+          />
+          <Route
+            path="/cancellation"
+            element={<Cancellation />}
+          />
+          <Route
+            path="/payment"
+            element={<Payment />}
+          />
+          <Route
+            path="/services"
+            element={<Services />}
+          />
+          {/* <Route path="/about" Component={<About/>}/> */}
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
+        </Routes>
+      </Suspense>
       </Box>
       <Footer />
     </div>
