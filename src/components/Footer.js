@@ -56,7 +56,8 @@ const Footer = () => {
         </Grid>
         <Grid item xs={6} className="footer_privacy">
           <Link to="/privacy"> Privacy Policy </Link>|{" "}
-          <Link to="/terms">Terms of Use </Link>
+          <Link to="/terms">Terms & Conditions </Link> | 
+          <Link to="/cancellation"> Cancellation & Refund  </Link> 
         </Grid>
       </Grid>
     </div>

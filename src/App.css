@@ -194,3 +194,60 @@ li a {
 justify-content: center;
 align-items: center;
 }
+
+.contact-container {
+  display: flex;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+  padding: 0px 30px;
+  background: #F9F9FB;
+  height: fit-content;
+}
+
+.address-price-container {
+  display: flex;
+    flex-direction: column;
+}
+
+.address-container {
+  display: flex;
+    flex-direction: row;
+}
+.contact-details {
+  margin: 0px 20px
+}
+
+.contact-address {
+  text-align: left;
+}
+
+img.pricing {
+  width: 750px;
+  height: 500px;
+}
+
+ol {
+  display: list-item;
+}
+ol li {
+  margin-bottom: 15px;
+    line-height: 24px;
+}
+
+.payment {
+  text-align: center;
+}
+
+.car-image{
+  display: flex;
+  flex-direction: row;
+}
+
+.car-image img {
+  width: 400px;
+    height: 250px;
+}

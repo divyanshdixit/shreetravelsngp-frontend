@@ -30,16 +30,12 @@ const Privacy = () => {
           {" "}
           Identity proof (for security reasons) In general, you can visit our
           website without telling us who you are or revealing any personal
-          information about yourself. We track the Internet address of the
-          domains from which people visit us and analyze this data for trends
-          and statistics, but the individual user remains anonymous.{" "}
+          information about yourself.
         </li>
       </ol>
-      <div><b>Booking Policy</b></div>
-      Shree Travels and the User consider the FAQs section to dictate the
-      booking policy. User ascertains that he would have gone through and
-      understood all the relevant policies under the same before making a
-      booking.
+      <div><b>Pricing Policy</b></div>
+      Shree Travels and the User consider the pricing section inside contact us section for
+      booking. The pricing are subject to change in future. 
       <div><b>Security</b></div>
       We are committed to ensuring that your information is secure. In order to
       prevent unauthorised access or disclosure we have put in place suitable
@@ -53,28 +49,8 @@ const Privacy = () => {
       provide whilst visiting such sites and such sites are not governed by this
       privacy statement. You should exercise caution and look at the privacy
       statement applicable to the website in question.
-      <div><b> Controlling your personal information </b></div>
-      You may choose to restrict the collection or use of your personal
-      information in the following ways:
-      <ol style={{ textAlign: "left", display: "list-item" }}>
-        <li>
-          {" "}
-          Whenever you are asked to fill in a form on the website, look for the
-          box that you can click to indicate that you do not want the
-          information to be used by anybody for direct marketing purposes{" "}
-        </li>
-        <li>
-          {" "}
-          If you have previously agreed to us using your personal information
-          for direct marketing purposes, you may change your mind at any time by
-          writing to or emailing us at shreetravelsngp@yahoo.com. We will not
-          sell, distribute or lease your personal information to third parties
-          unless we have your permission or are required by law to do so. We may
-          use your personal information to send you promotional information
-          about third parties which we think you may find interesting if you
-          tell us that you wish this to happen.
-        </li>
-      </ol>
+      
+      
     </div>
   );
 };

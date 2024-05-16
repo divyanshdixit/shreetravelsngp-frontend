@@ -60,14 +60,14 @@ const Home = () => {
         {/* request btn */}
         <div className="divBtn-grps">
           <Button
-            text={data.button.transportation}
+            text={data.button.pricing}
             onclick={() => navigate("/contact")}
             className="ex-demo-btn"
           />
 
           <Button
             text={data.button.payments}
-            onclick={() => navigate("/")}
+            onclick={() => navigate("/payment")}
             className="ex-demo-btn"
           />
         </div>

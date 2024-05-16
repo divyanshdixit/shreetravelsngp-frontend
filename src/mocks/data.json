@@ -10,7 +10,8 @@
   "button": {
     "request": "Request A Ride",
     "payments": "Quick Payments",
-    "transportation": "Employee Transportation"
+    "transportation": "Employee Transportation",
+    "pricing": "Pricing"
   },
 
   "globe": {

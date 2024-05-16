@@ -11,6 +11,7 @@ const Terms = () => {
         <li>In case of a payment made before the commencement of a booking, the amount shall be treated as advance / part payment and the final amount nett of the advance paid shall be cleared by the client as per the amount intimated to the client on email.</li>
         <li>The transaction / payment has to be made within the office hours of 0930 to 1900 hrs on a monday to saturday basis excluding public holidays for the vehicle to be dispatched. alternatively, for other hours / days, the client has the option to come to our 24x7 operations office and complete the physical swiping of the credit card and make the payment and confirm the booking.</li>
         <li>The Customer agrees and acknowledges that the use of the services offered by Shree Travels is at the sole risk of the Customer. Shree Travels disclaims all representations and warranties of any kind, whether express or implied as to condition, suitability, quality, merchantability and fitness of the services offered by Shree Travels. The liability of Shree Travels is excluded to the fullest extent permitted by law.</li>
+        <li> The pricing rates are subject to revision in petroleum product in the future. </li>
       </ol>
     </div>
   );

@@ -1,9 +1,165 @@
-import React from 'react'
+import React, { useState } from "react";
+import {
+  Box,
+  TextField,
+  FormControl,
+  Button,
+  FormHelperText,
+  Alert,
+} from "@mui/material";
+import CheckIcon from '@mui/icons-material/Check';
+import pricing from '../images/pricing.jpeg';
+import Image from "../containers/Image";
+import Heading from "../containers/Heading";
 
 const Contact = () => {
-  return (
-    <div>Contact us content</div>
-  )
-}
+  const [contact, setContact ] = useState({
+    name: "",
+    email: "",
+    number: "",
+    query: "",
+  });
+  const [error] = useState(false);
+  const [show, setShow] = useState(false);
 
-export default Contact
+  const handleSubmit = (e) => {
+    console.log(e)
+    e.preventDefault();
+    const {name, email, number, query} = contact;
+    setShow(true);
+
+    // const formData = new FormData(e.currentTarget);
+    // const name = formData.get("name");
+    // const email = formData.get("email");
+    // const number = formData.get("number");
+    // const query = formData.get("query");
+    console.log(name, email, number, query);
+    setTimeout(() => {
+      setShow(false);
+      setContact({
+        name: "",
+    email: "",
+    number: "",
+    query: "",
+      })
+    }, 1500)
+  };
+
+  const handleChange = (e) => {
+    setContact((prev) => {
+      return {...prev, [e.target.name]: e.target.value}
+    });
+
+  }
+
+  return (
+    <>
+    <div className="contact-container">
+      <Box component="form" className="contact-form">
+        <h3> Send your queries </h3>
+        <FormControl>
+          {/* <InputLabel htmlFor="name">Name</InputLabel> */}
+          <TextField
+            error={error}
+            id="name"
+            name="name"
+            label="Name"
+            variant="standard"
+            value={contact.name}
+            onChange={handleChange}
+          />
+        </FormControl>
+
+        <FormControl>
+          {/* <InputLabel htmlFor="email">Email address</InputLabel> */}
+          <TextField
+            error={error}
+            id="email"
+            name="email"
+            label="Email"
+            variant="standard"
+            value={contact.email}
+            onChange={handleChange}
+          />
+          <FormHelperText id="my-helper-text">
+            We'll never share your email.
+          </FormHelperText>
+        </FormControl>
+
+        <FormControl>
+          {/* <InputLabel htmlFor="contact">Contact Number</InputLabel> */}
+          <TextField
+            error={error}
+            id="contact"
+            name="number"
+            label="Contact Number"
+            variant="standard"
+            value={contact.number}
+            onChange={handleChange}
+          />
+        </FormControl>
+
+        <FormControl>
+          {/* <InputLabel htmlFor="query">Your Query</InputLabel> */}
+          <TextField
+            id="query"
+            name="query"
+            value={contact.query}
+            label="Your query"
+            multiline
+            rows={4}
+            onChange={handleChange}
+          />
+        </FormControl>
+        <Button variant="outlined" type="submit" onClick={handleSubmit}>
+          Submit
+        </Button>
+        {
+          show &&  
+          <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+          Thank you for submitting query. We'll get back to you shortly.
+        </Alert>
+        }
+      </Box>
+      <div className="address-price-container">
+
+        <div className="address-container">
+          <div className="contact-details">
+            <h3> Contact Details </h3>
+            <div className="contact-address">
+            <p>
+                Plot No. 1066, Near Law College Square, Gorepeth
+            </p>
+            <p>
+                Nagpur- 440010
+            </p>
+            <p>
+                Tele: 2536801 
+            </p>
+            <p>
+                Mobile: 9822236802 
+            </p>
+            <p>
+                Email: shreetravelsngp@yahoo.com
+            </p>
+            </div>
+          </div>
+          <div className="open_hrs">
+            <h3> Opening Hours </h3>
+            <p> Mon to Sat: <span> 10:00 AM to 10:00 PM</span></p>
+          </div>
+        </div>
+
+        <div className="pricing-img">
+          <Heading component="h2" content="Pricing" />
+          <Image src={pricing} alt="pricing" width="500px" height="500px" classNames="pricing" />
+        </div>
+      </div>
+    </div>
+
+    
+    </>
+  );
+};
+
+export default Contact;

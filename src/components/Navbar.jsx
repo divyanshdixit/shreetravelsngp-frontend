@@ -17,6 +17,9 @@ const Navbar = () => {
             <Link to="/"> Home </Link>
           </li>
           <li>
+            <Link to="/services">Services</Link>
+          </li>
+          <li>
             <Link to="/contact">Contact us</Link>
           </li>
         <Button text={data.button.request} onclick={() =>  navigate('/contact')}/>
