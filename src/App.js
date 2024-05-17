@@ -52,7 +52,9 @@ function App() {
         </Routes>
       </Suspense>
       </Box>
-      <Footer />
+      <Suspense fallback="Loading...">
+        <Footer />
+      </Suspense>
     </div>
   );
 }
