@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Wallppr from "./Wallppr";
 import Grid from "@mui/material/Grid";
 import Gif from "../images/GIF.gif";
@@ -21,6 +21,14 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const getUser = async() => {
+      const response = await fetch('http://shreetravelsnagpur.com/register');
+      const result = await response.json();
+      console.log(result);
+    }
+    getUser();
+  }, [])
   // const getImageArr = useMemo(() => {
   //   return [amazon, hcl, dell, infosys, linkedin, mic];
   // }, []);
