@@ -3,6 +3,7 @@ import "./App.min.css";
 import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { Box } from "@mui/material";
+import Response from "./components/Response";
 const Contact = lazy(() => import("./components/Contact"));
 const Privacy = lazy(() => import("./components/Privacy"));
 const Terms = lazy(() => import("./components/Terms"));
@@ -48,6 +49,10 @@ function App() {
           <Route
             path="/contact"
             element={<Contact />}
+          />
+          <Route
+            path="/response"
+            element={<Response />}
           />
         </Routes>
       </Suspense>
