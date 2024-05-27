@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { Box } from "@mui/material";
 import Response from "./components/Response";
+import ErrorPage from "./components/ErrorPage";
 const Contact = lazy(() => import("./components/Contact"));
 const Privacy = lazy(() => import("./components/Privacy"));
 const Terms = lazy(() => import("./components/Terms"));
@@ -54,6 +55,7 @@ function App() {
             path="/response"
             element={<Response />}
           />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Suspense>
       </Box>
