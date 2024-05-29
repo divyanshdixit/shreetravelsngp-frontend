@@ -1,4 +1,4 @@
-import "./App.min.css";
+import "./App.css";
 // import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PaymentGateway from './PaymentGateway';
+import Button from '../containers/Button';
 
 // require('dotenv').config();
 
@@ -18,7 +19,7 @@ const Payment = () => {
   const [payerAddress, setPayerAddress] = useState("");
   const [callbackUrl, setCallbackUrl] = useState(`http://localhost:3000/response`);
   const [data, setData] = useState(null);
-  const [amountType, setamountType] = useState(null);
+  const [amountType, setamountType] = useState('INR');
   // const [details, setDetails] = useState({
   //   payerName: ''
   // });
@@ -41,7 +42,7 @@ const Payment = () => {
   return (
     <>
       {/* <Heading component="h1" content="Coming Soon..." className="payment" /> */}
-      <div className="container-fluid bg-secondary text-white py-4">
+      <div className="body-container container-fluid bg-secondary text-white py-4">
       <form className='xyz' onSubmit={handleSubmit} >
         <div className="wrapper">
 
@@ -51,96 +52,75 @@ const Payment = () => {
             </div>
           </div> */}
 
-          <div id='renderSabPaisa'></div>
           <div className="row mt-3">
-            <div className="form-group"></div>
 
-            <div className="col-md-3 mb-3">
-              {/* <label htmlFor=""> Client Code : </label> <br /> */}
+            <div className="col-input">
+              {/* <label htmlFor="" className="input-label" > Client Code : </label> */}
               <input type="hidden" placeholder='Client Code :' value={clientCode} onChange={(e) => setClientCode(e.target.value)} />
             </div>
 
-            <div className="col-md-3 mb-3">
-              {/* <label htmlFor="" > Trnx User Name : </label> <br /> */}
+            <div className="col-input">
+              {/* <label htmlFor="" className="input-label" > Trnx User Name : </label> */}
               <input type="hidden" placeholder='Trnx User Name :' value={transUserName} onChange={(e) => setTransUserName(e.target.value)} />
             </div>
 
-            <div className="col-md-3 mb-3">
-              {/* <label htmlFor="" > Trnx User Password : </label> <br /> */}
+            <div className="col-input">
+              {/* <label htmlFor="" className="input-label" > Trnx User Password : </label> */}
               <input type="hidden" placeholder='Trnx User Password :' value={transUserPassword} onChange={(e) => setTransUserPassword(e.target.value)} />
             </div>
-            <div className="col-md-3 mb-3">
-              {/* <label htmlFor="" > Auth Key : </label> <br /> */}
+            <div className="col-input">
+              {/* <label htmlFor="" className="input-label" > Auth Key : </label> */}
               <input type="hidden" placeholder='Auth Key :' value={authkey} onChange={(e) => setAuthkey(e.target.value)} />
             </div>
-            <div className="col-md-3 mb-3">
-              {/* <label htmlFor="" > Auth IV : </label> <br /> */}
+            <div className="col-input">
+              {/* <label htmlFor="" className="input-label" > Auth IV : </label> */}
               <input type="hidden" placeholder='Auth IV :' value={authiv} onChange={(e) => setAuthiv(e.target.value)} />
             </div>
-            <div className="col-md-3 mb-3">
-              <label htmlFor=""> Name : </label> <br />
-              <input type="text" placeholder='Name :' name="payerName" value={payerName} onChange={(e) => setPayerName(e.target.value)} required />
+            <div className="col-input">
+              <label htmlFor="" className="input-label"> Full Name </label>
+              <input type="text" placeholder='Enter your name' name="payerName" value={payerName} onChange={(e) => setPayerName(e.target.value)} required />
             </div>
-            <div className="col-md-3 mb-3">
-              <label htmlFor=""> Email : </label> <br />
+            <div className="col-input">
+              <label htmlFor="" className="input-label"> Email </label>
               <input type="email" placeholder='Email :' value={payerEmail} onChange={(e) => setPayerEmail(e.target.value)} required/>
             </div>
-            <div className="col-md-3 mb-3">
-              <label htmlFor=""> Phone : </label> <br />
+            <div className="col-input">
+              <label htmlFor="" className="input-label"> Phone </label>
               <input type="tel" placeholder='Phone :' value={payerMobile} onChange={(e) => setPayerMobile(e.target.value)} required min={10} max={10}/>
             </div>
-            <div className="col-md-3 mb-3">
-              <label htmlFor=""> Amount : </label> <br />
+            <div className="col-input">
+              <label htmlFor="" className="input-label"> Amount </label>
               <input type="number" placeholder='Amount :' value={amount} onChange={(e) => setAmount(e.target.value)}  required/>
             </div>
-            {/* <div className="col-md-3 mb-3">
-              <label htmlFor=""> Client Trnx Id : </label> <br />
+            {/* <div className="col-input">
+              <label htmlFor="" className="input-label"> Client Trnx Id : </label>
               <input type="hidden" placeholder='Client Trnx Id :' value={clientTxnId} onChange={(e) => setclientTxnId(e.target.value)} />
             </div> */}
-            <div className="col-md-3 mb-3">
-              <label htmlFor=""> Address : </label> <br />
+            <div className="col-input">
+              <label htmlFor="" className="input-label"> Address</label>
               <input type="text" placeholder='Address :' value={payerAddress} onChange={(e) => setPayerAddress(e.target.value)} />
             </div>
-            <div className="col-md-3 mb-3">
-              {/* <label htmlFor="" > Callback Url : </label> <br /> */}
+            <div className="col-input">
+              {/* <label htmlFor="" className="input-label" > Callback Url : </label> */}
               <input type="hidden" placeholder='Callback Url :' value={callbackUrl} onChange={(e) => setCallbackUrl(e.target.value)} />
             </div>
-            <div className="col-md-3 mb-3">
-              <label htmlFor="" > Remarks : </label> <br />
-              <input type="text" placeholder='Remarks if any :' value={data} onChange={(e) => setData(e.target.value)} />
+            <div className="col-input">
+              <label htmlFor="" className="input-label" > Remarks </label>
+              <textarea value={data} placeholder='Remarks if any' onChange={(e) => setData(e.target.value)} > </textarea>
+              {/* <input type="textarea" placeholder='Remarks if any :' value={data} onChange={(e) => setData(e.target.value)} /> */}
             </div>
-            {/* <div className="col-md-3 mb-3">
-              <label htmlFor="" > Udf1 : </label> <br />
-              <input type="text" placeholder='Udf 1 :' value={udf1} onChange={(e) => setudf1(e.target.value)} />
-            </div> */}
-            {/* <div className="col-md-3 mb-3">
-              <label htmlFor="" > Udf 2 : </label> <br />
-              <input type="text" placeholder='Udf 2 :' value={udf2} onChange={(e) => setudf2(e.target.value)} />
-            </div>
-            <div className="col-md-3 mb-3">
-              <label htmlFor="" > Udf 3 : </label> <br />
-              <input type="text" placeholder='Udf 3 :' value={udf3} onChange={(e) => setudf3(e.target.value)} />
-            </div> */}
-            {/* <div className="col-md-3 mb-3">
-              <label htmlFor="" > Channel ID : </label> <br />
-              <input type="hidden" placeholder='Channel Id :' value={channelId} onChange={(e) => setchannelId(e.target.value)} />
-            </div> */}
-            {/* <div className="col-md-3 mb-3">
-              <label htmlFor="" > Program ID : </label> <br />
-              <input type="text" placeholder='Program Id :' value={programId} onChange={(e) => setprogramId(e.target.value)} />
-            </div> */}
-            {/* <div className="col-md-3 mb-3">
-              <label htmlFor="" > MCC : </label> <br />
-              <input type="text" placeholder='MCC :' value={mcc} onChange={(e) => setmcc(e.target.value)} />
-            </div> */}
-            <div className="col-md-3 mb-3">
-              <label htmlFor="" > Account Type : </label> <br />
+            <div className="col-input">
+              <label htmlFor="" className="input-label" > Account Type </label>
               <input type="text" placeholder='Account Type :' value={amountType} onChange={(e) => setamountType(e.target.value)} disabled/>
             </div>
           </div>
           <div className="row mt-5 text-center">
             <div>
-              <button type="submit" value="Submit" className="xyz btn btn-success mb-5">Proceed for payment</button>
+              <Button
+              type="submit"
+                text={'Proceed for payment'}
+                className="ex-demo-btn"
+              />
             </div>
           </div>
         </div>
