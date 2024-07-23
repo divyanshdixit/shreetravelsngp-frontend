@@ -1,9 +1,9 @@
-import { Info } from "@mui/icons-material";
+// import { Info } from "@mui/icons-material";
 import React from "react";
 
-const SuccessTraxn = ({
+const SuccessTraxn = (
   // state: { sabpaisaTxnId, transDate, paymentMode, status, paidAmount, amountType },
-}) => {
+) => {
   return (
     <div>
       <h3> Your transaction is successfull! </h3>
