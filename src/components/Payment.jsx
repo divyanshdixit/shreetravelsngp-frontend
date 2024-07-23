@@ -46,8 +46,8 @@ const Payment = () => {
       merchantTrxnId: 'MT' + payerMobile.toString().substring(4,8) + Date.now()
     }
     
-    let res = await axios.post('https://shree-travels-backend.onrender.com/payment', { ...data })
-    // let res = await axios.post('http://localhost:8000/payment', { ...data })
+    // let res = await axios.post('https://shree-travels-backend.onrender.com/payment', { ...data })
+    let res = await axios.post('http://localhost:8000/payment', { ...data })
     console.log(res);
     if (res.data && res.data.result.data.instrumentResponse.redirectInfo.url) {
       window.location.href = res.data.result.data.instrumentResponse.redirectInfo.url;

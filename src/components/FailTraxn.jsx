@@ -1,18 +1,25 @@
 import React from 'react'
+import { NavLink, useLocation } from 'react-router-dom';
 
-// const FailTraxn = ({state: {message, sabpaisaTxnId, transDate, paymentMode, status, paidAmount, amountType}}) => {
-  const FailTraxn = () => {
+const FailTraxn = ()=> {
+  const location = useLocation();
+  const state = location.state;
+  const {message, date, data: {transactionId, merchantTransactionId, amount, responseCode, paymentInstrument
+: {type}}} = state;
   return (
     <div>
-        {/* <h3> Transaction failed Error: {message}</h3> */}
-        <h3> Transaction failed </h3>
-        {/* <ul className='fail-txn txn'>
-            <li> Transaction Id: {sabpaisaTxnId}</li>
-            <li> Transaction Date: {transDate}</li>
-            <li> Mode: {paymentMode}</li>
-            <li> Status: {status}</li>
-            <li> Amount: {`${paidAmount} ${amountType}`}</li>
-        </ul> */}
+        <h3> {message}</h3>
+        <ul className='fail-txn txn'>
+            <li> Transaction Id: {transactionId}</li>
+            <li> Transaction Id: {merchantTransactionId}</li>
+            <li> Transaction Date: {date}</li>
+            <li> Mode: {type}</li>
+            <li> Status: {responseCode}</li>
+            <li> Amount: {`${amount/100} INR`}</li>
+        </ul>
+        <button type="button">
+          <NavLink to="/"> Go to Home </NavLink>
+        </button>
     </div>
   )
 }
