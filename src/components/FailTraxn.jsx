@@ -5,7 +5,7 @@ import React from 'react'
   return (
     <div>
         {/* <h3> Transaction failed Error: {message}</h3> */}
-        <h3> Transaction failed Error </h3>
+        <h3> Transaction failed </h3>
         {/* <ul className='fail-txn txn'>
             <li> Transaction Id: {sabpaisaTxnId}</li>
             <li> Transaction Date: {transDate}</li>
