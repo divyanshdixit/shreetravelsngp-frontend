@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { NavLink, Navigate, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import FailTransaction from "./FailTraxn";
 import SuccessTransaction from "./SuccessTraxn";
 import { useSearchParams } from "react-router-dom";
@@ -14,6 +14,7 @@ const Response = () => {
   }
   useEffect(() => {
      getResponse();
+     // eslint-disable-next-line
   }, [])
   // const location = useLocation();
 
