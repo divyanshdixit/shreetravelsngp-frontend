@@ -46,7 +46,7 @@ const Payment = () => {
       merchantTrxnId: 'MT' + payerMobile.toString().substring(4,8) + Date.now()
     }
     
-    let res = await axios.post('http://localhost:8000/payment', { ...data })
+    let res = await axios.post('https://shree-travels-backend.onrender.com/payment', { ...data })
     // let res= await fetch('http://localhost:8000/payment',{
     //   method: 'POST',
     //   body: JSON.stringify(data),
