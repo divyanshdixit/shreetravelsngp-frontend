@@ -8,7 +8,8 @@ const Response = () => {
   const [searchParams] = useSearchParams();
   const id = searchParams.get('id');
   const getResponse = async() => {
-    const resp = await fetch(`https://shree-travels-backend.onrender.com/status?id=${id}`)
+    const resp = await fetch(`https://shree-travels-backend.onrender.com/status/${id}`)
+    // const resp = await fetch(`http://localhost:8000/status/${id}`)
     const result = await resp.json();
     console.log(result);
   }
