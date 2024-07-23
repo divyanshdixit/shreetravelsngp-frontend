@@ -5,6 +5,9 @@ import { Suspense, lazy } from "react";
 import { Box } from "@mui/material";
 import Response from "./components/Response";
 import ErrorPage from "./components/ErrorPage";
+import SuccessTransaction from "./components/SuccessTraxn";
+import FailTransaction from "./components/FailTraxn";
+
 const Contact = lazy(() => import("./components/Contact"));
 const Privacy = lazy(() => import("./components/Privacy"));
 const Terms = lazy(() => import("./components/Terms"));
@@ -54,6 +57,14 @@ function App() {
           <Route
             path="/response"
             element={<Response />}
+          />
+          <Route
+            path="/success"
+            element={<SuccessTransaction />}
+          />
+          <Route
+            path="/failure"
+            element={<FailTransaction />}
           />
           <Route path="*" element={<ErrorPage />} />
         </Routes>

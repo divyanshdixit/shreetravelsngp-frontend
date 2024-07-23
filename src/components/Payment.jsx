@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import PaymentGateway from './PaymentGateway';
+// import PaymentGateway from './PaymentGateway';
 import Button from '../containers/Button';
+import axios from 'axios';
 
 // require('dotenv').config();
 
 const Payment = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const [clientCode, setClientCode] = useState(process.env.REACT_APP_PAISA_CLIENT_CODE);
   const [transUserName, setTransUserName] = useState(process.env.REACT_APP_PAISA_USER_NAME);
   const [transUserPassword, setTransUserPassword] = useState(process.env.REACT_APP_PAISA_PASSWORD);
@@ -15,7 +16,7 @@ const Payment = () => {
   const [payerEmail, setPayerEmail] = useState("");
   const [payerMobile, setPayerMobile] = useState("");
   // const [clientTxnId, setclientTxnId] = useState(null);
-  const [amount, setAmount] = useState(null);
+  const [amount, setAmount] = useState(0);
   const [payerAddress, setPayerAddress] = useState("");
   const [callbackUrl, setCallbackUrl] = useState(`http://localhost:3000/response`);
   const [data, setData] = useState(null);
@@ -33,9 +34,29 @@ const Payment = () => {
   //   })
   // }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsOpen(true);
+    let data = {
+      name: payerName,
+      email: payerEmail,
+      address: payerAddress,
+      amount: amount*100,
+      mobile: payerMobile,
+      merchantUserId: 'MUID' + payerMobile.toString().substring(7) + Date.now(),
+      merchantTrxnId: 'MT' + payerMobile.toString().substring(4,8) + Date.now()
+    }
+    
+    let res = await axios.post('http://localhost:8000/payment', { ...data })
+    // let res= await fetch('http://localhost:8000/payment',{
+    //   method: 'POST',
+    //   body: JSON.stringify(data),
+    // })
+    // const result = await res.json();
+    console.log(res);
+    if (res.data && res.data.result.data.instrumentResponse.redirectInfo.url) {
+      window.location.href = res.data.result.data.instrumentResponse.redirectInfo.url;
+    }
+    // setIsOpen(true);
     // const btn = document.getElementById('renderSabPaisa');
     // btn.click();
   }
@@ -124,7 +145,7 @@ const Payment = () => {
             </div>
           </div>
         </div>
-      <PaymentGateway amountType={amountType} clientCode={clientCode} transUserName={transUserName} transUserPassword={transUserPassword} authkey={authkey} authiv={authiv} payerName={payerName} payerEmail={payerEmail} payerMobile={payerMobile} amount={amount} payerAddress={payerAddress} callbackUrl={callbackUrl} isOpen={isOpen} />
+      {/* <PaymentGateway amountType={amountType} clientCode={clientCode} transUserName={transUserName} transUserPassword={transUserPassword} authkey={authkey} authiv={authiv} payerName={payerName} payerEmail={payerEmail} payerMobile={payerMobile} amount={amount} payerAddress={payerAddress} callbackUrl={callbackUrl} isOpen={isOpen} /> */}
       </form>
 
     </div>
