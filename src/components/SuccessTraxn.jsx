@@ -1,29 +1,38 @@
 import { Info } from "@mui/icons-material";
-import React from "react";
-import { NavLink, useSearchParams } from "react-router-dom";
+import React, { createContext, useMemo } from "react";
+import { Navigate, NavLink, useSearchParams } from "react-router-dom";
+import Table from '../containers/table/Table';
+import data from '../mocks/data.json';
+
+export const TranxRowContext = createContext();
 
 const SuccessTraxn = () => {
-  
   const [searchParams] = useSearchParams();
   const params = searchParams.entries();
-  const mapTranx = new Map(params);
-  const d = new Date();
-  const date = `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
-  
+
+  const getMapValue = useMemo(() => {
+    const mapTranx = new Map(params);
+    const d = new Date();
+    const date = `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
+    mapTranx.set('traxndate', date);
+    return mapTranx;
+
+  }, [params]);
+
+  if(!searchParams.get('redirect')){
+    return <Navigate to="/payment" replace />
+  }
+
   return (
-    <div>
-      <h3> Your transaction is successful! </h3>
+    <div className="successtraxn-container body-container">
+      {console.log(getMapValue)}
+      <h3 className="successTraxn"> Your transaction is successful! </h3>
       <p>
-        <Info /> Please copy below transaction id for future reference!{" "}
+        <Info /> Please copy below transaction id for future reference!
       </p>
-      <ul className="success-txn txn">
-        <li> Transaction Id: {mapTranx.get('transactionId')}</li>
-        <li> Merchant Transaction Id: {mapTranx.get('merchantTransactionId')}</li>
-        <li> Transaction Date: {date}</li>
-        <li> Mode: {mapTranx.get('type')}</li>
-        <li> Status: {mapTranx.get('responseCode')}</li>
-        <li> Amount: {`${mapTranx.get('amount')} INR`}</li>
-      </ul>
+      <TranxRowContext.Provider value={{row: getMapValue, col: Object.keys(data.transactions)}}>
+          <Table />
+      </TranxRowContext.Provider>
       <button type="button">
         <NavLink to="/"> Go to Home </NavLink>
       </button>

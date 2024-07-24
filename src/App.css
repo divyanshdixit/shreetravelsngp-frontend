@@ -336,3 +336,30 @@ img.pricing {
     width: 200px!important;
     height: 35px!important;
 }
+
+/* traxn css */
+
+.successTraxn {
+  color: green;
+}
+
+.failTraxn {
+  color: rgb(133, 23, 23);
+}
+
+.traxn-detail {
+  color: #333;
+  font-weight: 600;
+}
+
+.table {
+  border: 2px solid rgb(230, 103, 56)
+}
+
+.table tbody tr td {
+  border: none;
+}
+
+.table tbody tr td:nth-child(1){
+  font-weight: 600;
+}

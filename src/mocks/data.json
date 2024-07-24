@@ -27,5 +27,14 @@
   "experience": {
     "title": "Schedule a customized demo to understand how we can help you optimize your office transportation.",
     "heading": "Experience it yourself"
+  },
+
+  "transactions": {
+    "amount": "Amount",
+    "merchantTransactionId": "Merchant Transaction Id",
+    "transactionId": "Transaction Id",
+    "type": "Mode",
+    "responseCode": "Status",
+    "traxndate": "Transaction Date"
   }
 }
