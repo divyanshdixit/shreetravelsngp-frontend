@@ -81,6 +81,10 @@ li a {
   position: relative;
 }
 
+.driving-sec .MuiGrid-container {
+  align-items: center;
+}
+
 /* .drive-txt{
   margin-left: 10px;
 } */
@@ -94,10 +98,10 @@ li a {
 }
 
 .drive-txt p {
-  font-size: 23px;
-  color: grey;
-  list-style-type: lower-roman;
-
+  font-size: 16px;
+  color: #1e1d1d;
+  line-height: 24px;
+  text-align: left;
 }
 
 .divBtn {
@@ -111,8 +115,10 @@ li a {
 }
 
 .globe-wall{
-  background-repeat: "no-repeat";
-  background-size: "cover",
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: local;
+  background-size: contain;
 }
 
 .globe-wall p {
@@ -134,12 +140,13 @@ li a {
   font-size: 38px;
 }
 
-.Redi-para {
-  font-size: 23px;
+.Redefi {
+  width: 80%;
   text-align: center;
-  color: grey;
-  width: 85%;
-  margin: 0 auto;
+  display: inline-flex;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1e1d1d;
 }
 
 .footer {
@@ -182,10 +189,9 @@ li a {
 }
 
 .gif-img {
-  margin-top: 140px;
-  margin-left: 60px;
-  width: 450px;
-  height: 560px;
+  margin-left: 50px;
+  width: 530px;
+  height: 480px;
 }
 
 /* css added by divyansh */
@@ -231,6 +237,10 @@ align-items: center;
   padding: 0px 30px;
   background: #F9F9FB;
   height: fit-content;
+}
+
+.contact-form .MuiInputLabel-root, .contact-form .Mui-focused{
+  color: #1e1d1d!important;
 }
 
 .contact-form .submit-btn {
@@ -288,9 +298,9 @@ img.pricing {
 }
 
 .service-para {
-  color: grey;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
+  color: #1e1d1d;
   text-align: left;
 }
 
@@ -307,8 +317,8 @@ img.pricing {
 }
 
 .privacy-container p, .cancel-container p, .contact-container p {
-  color: grey;
-  font-size: 18px;
+  color: #1e1d1d;
+  font-size: 16px;
   line-height: 24px;
 }
 

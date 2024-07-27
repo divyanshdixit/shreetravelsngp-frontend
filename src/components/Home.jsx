@@ -1,7 +1,7 @@
 import React from "react";
 import Wallppr from "./Wallppr";
 import Grid from "@mui/material/Grid";
-import Gif from "../images/GIF.gif";
+import Gif from "../images/gif.jpeg";
 import Title from "../containers/Title";
 import data from "../mocks/data.json";
 import Heading from "../containers/Heading";
@@ -14,7 +14,7 @@ import Button from "../containers/Button";
 // import mic from "../images/mic.png";
 // import linkedin from "../images/linkin.png";
 // import infosys from "../images/infosys.png";
-import globe from "../images/globe.webp";
+import globe from "../images/world.jpeg";
 import img_exprience from "../images/wall-dark.webp";
 import { useNavigate } from "react-router-dom";
 
@@ -106,9 +106,9 @@ const Home = () => {
           content={data.redifiniing.heading2}
           className="headRefi-2"
         />
-        <div className="Redi-para">
+        {/* <div className="Redi-para"> */}
           <Title title={data.redifiniing.title} className="Redefi" />
-        </div>
+        {/* </div> */}
       </div>
 
       {/* experience it yoursefl */}
