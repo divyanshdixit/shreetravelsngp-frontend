@@ -7,34 +7,12 @@ import data from "../mocks/data.json";
 import Heading from "../containers/Heading";
 import Image from "../containers/Image";
 import Button from "../containers/Button";
-// import Marquee from "react-fast-marquee";
-// import amazon from "../images/amazon.png";
-// import hcl from "../images/hcl.png";
-// import dell from "../images/dell.png";
-// import mic from "../images/mic.png";
-// import linkedin from "../images/linkin.png";
-// import infosys from "../images/infosys.png";
 import globe from "../images/world.jpeg";
 import img_exprience from "../images/wall-dark.webp";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const getUser = async() => {
-  //     const response = await fetch(`${process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/'}register`);
-  //     const result = await response.json();
-  //   }
-  //   getUser();
-  // }, [])
-  // const getImageArr = useMemo(() => {
-  //   return [amazon, hcl, dell, infosys, linkedin, mic];
-  // }, []);
-
-  // const getImageAlts = useMemo(() => {
-  //   return ["amazon", "hcl", "dell", "infosys", "linkedin", "mic"];
-  // }, []);
 
   return (
     <>

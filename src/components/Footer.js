@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer">
-      <Grid container>
         {/* <Grid item xs={3}>
       <div class="flexBasis company">
           <h3>Company</h3>
@@ -48,9 +47,8 @@ const Footer = () => {
       <img src={gPlay} alt="gplay" className='g-play' /> 
       <img src={store} alt="store"  className='stor'/>
       </Grid> */}
-      </Grid>
       <hr />
-      <Grid container>
+      <Grid container className="footer-container">
         <Grid item xs={6}>
           <h4>@ 2024 Copyright. All rights reserved.</h4>
         </Grid>

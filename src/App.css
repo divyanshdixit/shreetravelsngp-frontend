@@ -79,6 +79,10 @@ li a {
 
 }
 
+.navdiv .menu-icon {
+  display: none;
+}
+
 .driving-sec {
   position: relative;
 }
@@ -172,17 +176,19 @@ li a {
 .wallpaper {
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 90px;
   max-width: 100%;
-  height: 800px;
-  
-
+  height: 600px;
   /* filter:url(#darken900); */
   filter: brightness(80%);
+}
 
+.wallpaper button {
+  display: none;
 }
 
 .wall-txt {
+  margin-top:0px;
+  padding: 100px 0px 0px 0px;
   font-size: 70px;
   color: #F26F21;
   text-align: center;
@@ -204,9 +210,9 @@ li a {
 }
 
 .ex-demo {
-  background-repeat:"no-repeat"; 
-  background-size:"cover";
-  height: '350px'
+  background-repeat:no-repeat; 
+  background-size:cover;
+  height: 200px
 }
 
 .demo_btn.ex-demo-btn {
@@ -444,7 +450,107 @@ img.pricing {
   border-color: #555 transparent transparent transparent;
 }
 
-
 .copyicon {
   cursor: pointer;
+}
+
+/* mobile css */
+
+@media screen and (max-width:920px){
+  .navbar img {
+    /* display: flex; */
+    height: 60px;
+    padding: 10px 25px;
+    margin: 0px;
+    width: 72%;
+  }
+
+  .navbar .demo_btn{
+    display: none;
+  }
+
+  .navdiv ul {
+    display: none;
+  }
+
+  .navdiv .menu-icon {
+    color: #fff;
+    display: block;
+  }
+
+  .drawer-list li a{
+    color: grey;
+  }
+
+  .drawer-list li .active{
+    color: #F26F21
+  }
+
+  .drawer-list li a:hover{
+    color: #F26F21
+  }
+
+  .wallpaper {
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-size: auto;
+  }
+
+  .wallpaper button {
+    display: inline-flex;
+  }
+
+  .wall-txt {
+    font-size: 50px;
+    padding:0px
+  }
+
+  .driving-sec img {
+    width: 90%;
+    height: 270px;
+    display: inline-flex;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-left: 0px;
+  }
+
+  .globe-wall {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .globe-wall p {
+    font-size: 20px;
+  }
+
+  .divBtn-grps {
+    justify-content: space-between;
+  }
+
+  .demo_btn.ex-demo-btn {
+    font-size: 13px;
+  }
+
+  .ex-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+  }
+
+  .footer .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0px;
+  }
+
+  .footer-container .footer_privacy {
+    display: flex;
+    flex-direction: column;
+  }
 }
