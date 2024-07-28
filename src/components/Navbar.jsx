@@ -22,7 +22,6 @@ const Navbar = () => {
           <li>
             <Link to="/contact">Contact us</Link>
           </li>
-        <Button text={data.button.request} onclick={() =>  navigate('/contact')}/>
 
           {/* <Button
             variant="contained"
@@ -38,6 +37,7 @@ const Navbar = () => {
           </Button> */}
         </ul>
       </div>
+      <Button text={data.button.request} onclick={() =>  navigate('/contact')}/>
     </nav>
   );
 };

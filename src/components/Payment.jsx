@@ -5,26 +5,37 @@ import Loader from "../containers/loader/Loader";
 
 const Payment = () => {
   const [loading, setLoading] = useState(false);
-  const [payerName, setPayerName] = useState("");
-  const [payerEmail, setPayerEmail] = useState("");
-  const [payerMobile, setPayerMobile] = useState("");
-  const [amount, setAmount] = useState(0);
-  const [payerAddress, setPayerAddress] = useState("");
-  const [data, setData] = useState(null);
-  const [amountType, setamountType] = useState("INR");
+  const [payerDetails, setPayerDetails] = useState({
+    payerName: '',
+    payerEmail: '',
+    amount: '',
+    remarks:'',
+    amountType:'INR'
+  });
+
+  const handleInput = (e) => {
+    setPayerDetails((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value
+      }
+    })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    const {payerName, payerEmail, amount, remarks, amountType} = payerDetails;
+
     let data = {
       name: payerName,
       email: payerEmail,
-      address: payerAddress,
       amount: amount * 100,
-      mobile: payerMobile,
-      merchantUserId: "MUID" + payerMobile.toString().substring(7) + Date.now(),
+      remarks,
+      currency: amountType,
+      merchantUserId: "MUID" + Date.now(),
       merchantTrxnId:
-        "MT" + payerMobile.toString().substring(4, 8) + Date.now(),
+        "MT" + Date.now(),
     };
 
     let res = await axios.post(
@@ -42,41 +53,37 @@ const Payment = () => {
     <>
       {/* <Heading component="h1" content="Coming Soon..." className="payment" /> */}
       <div className="body-container container-fluid bg-secondary text-white py-4">
-        <form className="xyz" onSubmit={handleSubmit}>
-          <div className="wrapper">
-            {/* <div className="row py-2">
-            <div className="col-md-12 d-flex justify-content-center">
-              <h2 className='text-white bg-success px-2 py-1 rounded'>SabPaisa Payment Gateway</h2>
-            </div>
-          </div> */}
-
-            <div className="row mt-3">
+        <form className="payment-form" onSubmit={handleSubmit}>
+            <div className="payment-row mt-3">
               <div className="col-input">
                 <label htmlFor="" className="input-label">
-                  Full Name
+                  Full Name:
                 </label>
                 <input
                   type="text"
-                  placeholder="Enter your name"
+                  placeholder="Name"
                   name="payerName"
-                  value={payerName}
-                  onChange={(e) => setPayerName(e.target.value)}
+                  value={payerDetails.payerName}
+                  onChange={handleInput}
                   required
                 />
               </div>
               <div className="col-input">
                 <label htmlFor="" className="input-label">
-                  Email
+                  Email:
                 </label>
                 <input
                   type="email"
-                  placeholder="Email :"
-                  value={payerEmail}
-                  onChange={(e) => setPayerEmail(e.target.value)}
+                  name="payerEmail"
+                  placeholder="Email"
+                  value={payerDetails.payerEmail}
+                  onChange={handleInput}
                   required
                 />
               </div>
-              <div className="col-input">
+            </div>
+            <div className="payment-row mt-3">
+              {/* <div className="col-input">
                 <label htmlFor="" className="input-label">
                   Phone
                 </label>
@@ -89,56 +96,35 @@ const Payment = () => {
                   min={10}
                   max={10}
                 />
-              </div>
-              <div className="col-input">
+              </div> */}
+              <div className="col-input col-span">
                 <label htmlFor="" className="input-label">
-                  Amount
+                  Amount:
                 </label>
                 <input
-                  type="number"
-                  placeholder="Amount :"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
+                  type="text"
+                  name="amount"
+                  placeholder="Amount"
+                  value={payerDetails.amount}
+                  onChange={handleInput}
                   required
                 />
+                <span className="amount-type">{payerDetails.amountType}</span>
               </div>
-
               <div className="col-input">
                 <label htmlFor="" className="input-label">
-                  Address
+                  Remarks:
                 </label>
                 <input
                   type="text"
-                  placeholder="Address :"
-                  value={payerAddress}
-                  onChange={(e) => setPayerAddress(e.target.value)}
-                />
-              </div>
-
-              <div className="col-input">
-                <label htmlFor="" className="input-label">
-                  Remarks
-                </label>
-                <textarea
-                  value={data}
+                  name="remarks"
                   placeholder="Remarks if any"
-                  onChange={(e) => setData(e.target.value)}
-                ></textarea>
-              </div>
-              <div className="col-input">
-                <label htmlFor="" className="input-label">
-                  Account Type
-                </label>
-                <input
-                  type="text"
-                  placeholder="Account Type :"
-                  value={amountType}
-                  onChange={(e) => setamountType(e.target.value)}
-                  disabled
+                  value={payerDetails.remarks}
+                  onChange={handleInput}
                 />
               </div>
             </div>
-            <div className="row mt-5 text-center">
+            <div className="payment-btn text-center">
               <div>
                 {loading ? (
                   <Loader />
@@ -152,7 +138,7 @@ const Payment = () => {
                 )}
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </form>
       </div>
     </>

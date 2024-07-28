@@ -25,7 +25,6 @@ const SuccessTraxn = () => {
 
   return (
     <div className="successtraxn-container body-container">
-      {console.log(getMapValue)}
       <h3 className="successTraxn"> Your transaction is successful! </h3>
       <p>
         <Info /> Please copy below transaction id for future reference!
@@ -33,9 +32,9 @@ const SuccessTraxn = () => {
       <TranxRowContext.Provider value={{row: getMapValue, col: Object.keys(data.transactions)}}>
           <Table />
       </TranxRowContext.Provider>
-      <button type="button">
-        <NavLink to="/"> Go to Home </NavLink>
-      </button>
+      <div className="btn">
+            <NavLink className="link_btn" to="/"> Go to Home </NavLink>
+      </div>
     </div>
   );
 };

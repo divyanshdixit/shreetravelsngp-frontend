@@ -35,6 +35,9 @@
     "transactionId": "Transaction Id",
     "type": "Mode",
     "responseCode": "Status",
-    "traxndate": "Transaction Date"
+    "traxndate": "Transaction Date",
+    "email": "Payer Email",
+    "name": "Payer Name",
+    "remarks": "Remarks"
   }
 }

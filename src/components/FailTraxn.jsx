@@ -23,7 +23,6 @@ const FailTraxn = () => {
 
   return (
     <div className="failtraxn-container body-container">
-      {console.log(getMapValue)}
       <h3 className="failTraxn"> Your transaction is failed!</h3>
       <TranxRowContext.Provider value={{row: getMapValue, col: Object.keys(data.transactions)}}>
           <Table />
@@ -38,9 +37,9 @@ const FailTraxn = () => {
         <li> Status: {mapTranx.get("responseCode")}</li>
         <li> Amount: {`${mapTranx.get("amount")} INR`}</li>
       </ul> */}
-      <button type="button">
-        <NavLink to="/"> Go to Home </NavLink>
-      </button>
+      <div className="btn">
+        <NavLink className="link_btn" to="/"> Go to Home </NavLink>
+      </div>
     </div>
   );
 };
