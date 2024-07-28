@@ -367,7 +367,8 @@ img.pricing {
 
 .col-input input {
   border: 1px solid grey;
-  width: 60%;
+  /* width: 60%; */
+  width: auto;
 }
 
 .col-span {
@@ -457,7 +458,12 @@ img.pricing {
 /* mobile css */
 
 @media screen and (max-width:920px){
-  .navbar img {
+  .body-container {
+    padding: 25px;
+  }
+  
+  /* .navbar img */
+  img {
     /* display: flex; */
     height: 60px;
     padding: 10px 25px;
@@ -509,11 +515,10 @@ img.pricing {
   }
 
   .driving-sec img {
-    width: 90%;
-    height: 270px;
+    width: 100%;
+    height: 220px;
     display: inline-flex;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding: 0px;
     margin-left: 0px;
   }
 
@@ -540,6 +545,56 @@ img.pricing {
     align-items: center;
     justify-content: space-between;
     height: 300px;
+  }
+
+  .car-image {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .car-image img {
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .address-container {
+    flex-direction: column;
+  }
+
+  .pricing-img img {
+    width: 100%;
+    padding: 0;
+    height: 250px;
+  }
+  
+  .payment-form {
+    width: 100%;
+  }
+
+  .payment-row {
+    margin:0px;
+    flex-direction: column;
+  }
+
+  .payment-row .col-input {
+    align-items: baseline;
+    margin-bottom: 20px;
+    flex-flow: column;
+  }
+
+  .payment-row .input-label {
+    padding: 0px;
+    padding-right: 10px;
+    width: auto;
+    margin-right: 0px;
+    margin-bottom: 5px;
+  }
+
+  .col-span .amount-type {
+    top: 60%;
   }
 
   .footer .footer-container {

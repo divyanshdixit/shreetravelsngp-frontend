@@ -39,5 +39,12 @@
     "email": "Payer Email",
     "name": "Payer Name",
     "remarks": "Remarks"
+  },
+
+  "menuItems": {
+    "": "Home",
+    "services": "Services",
+    "payment": "Quick Payment",
+    "contact": "Contact"
   }
 }
